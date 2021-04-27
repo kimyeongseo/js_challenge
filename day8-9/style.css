@@ -1,0 +1,10 @@
+body {
+  font-family: sans-serif;
+}
+
+.pending,
+.finished {
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 20px;
+}
