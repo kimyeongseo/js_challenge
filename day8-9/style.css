@@ -8,3 +8,15 @@ body {
   font-weight: 600;
   margin-top: 20px;
 }
+
+ul {
+  padding-left: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+span {
+  cursor: pointer;
+}

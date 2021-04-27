@@ -3,70 +3,150 @@ input = document.querySelector(".add-to-do"),
 pendingList = document.querySelector(".pending_list"),
 finishedList = document.querySelector(".finished_list");
 
-let toDos = [];
 
-function persistToDos() {
-  const stringToDo = JSON.stringify(toDos);
+let pending = [];
+let finished = [];
+
+
+function pendingToDos() {
+  const stringToDo = JSON.stringify(pending);
   localStorage.setItem("Pending", stringToDo);
 }
 
-function saveToDo(text) {
-  const toDoObject = {
-    id: toDos.length + 1,
-    value: text
-  };
-  toDos.push(toDoObject);
-  persistToDos();
+function finishedToDos(){
+  const stringToDo = JSON.stringify(finished);
+  localStorage.setItem("Finished", stringToDo);
 }
 
-function handleDelete(event) {
+function savePendingToDo(text) {
+  const toDoObject = {
+    id: pending.length + 1,
+    value: text
+  };
+  pending.push(toDoObject);
+  pendingToDos();
+}
+
+function saveFinishedToDo(text) {
+  const toDoObject = {
+    id: finished.length + 1,
+    value: text
+  };
+  finished.push(toDoObject);
+  finishedToDos();
+}
+
+function handleDeletePending(event) {
   const target = event.target;
   const li = target.parentElement;
   const ul = li.parentElement;
   const toDoId = li.id;
   ul.removeChild(li);
-  toDos = toDos.filter(function(toDo) {
+  pending = pending.filter(function(toDo) {
     return toDo.id !== parseInt(toDoId);
   });
-  persistToDos();
+  pendingToDos();
 }
 
-function addToDo(text) {
+function handleDeleteFinished(event) {
+  const target = event.target;
+  const li = target.parentElement;
+  const ul = li.parentElement;
+  const toDoId = li.id;
+  ul.removeChild(li);
+  finished = finished.filter(function(toDo) {
+    return toDo.id !== parseInt(toDoId);
+  });
+  finishedToDos();
+}
+
+
+function addPendingToDo(text) {
   const toDo = document.createElement("li");
   toDo.className = "toDo";
-  toDo.id = toDos.length + 1;
+  toDo.id = pending.length + 1;
+
   const deleteBtn = document.createElement("span");
   deleteBtn.innerHTML = "❌";
-  deleteBtn.className = "toDo__button";
-  deleteBtn.addEventListener("click", handleDelete);
+  deleteBtn.className = "toDo__deleteBtn";
+  deleteBtn.addEventListener("click", handleDeletePending);
+
+  const finishBtn = document.createElement("span");
+  finishBtn.innerHTML = "✅";
+  finishBtn.className = "toDo__finishBtn"
+  finishBtn.addEventListener("click", () => {
+  addFinishedToDo(text);
+  });
+  finishBtn.addEventListener("click", handleDeletePending);
+
   const label = document.createElement("label");
   label.innerHTML = text;
   toDo.appendChild(deleteBtn);
+  toDo.appendChild(finishBtn);
   toDo.appendChild(label);
   pendingList.appendChild(toDo);
-  saveToDo(text);
+  savePendingToDo(text);
+}
+
+function addFinishedToDo(text){
+  const toDo = document.createElement("li");
+  toDo.className = "toDo";
+  toDo.id = finished.length + 1;
+
+  const deleteBtn = document.createElement("span");
+  deleteBtn.innerHTML = "❌";
+  deleteBtn.className = "toDo__deleteBtn";
+  deleteBtn.addEventListener("click", handleDeleteFinished);
+
+  const finishBtn = document.createElement("span");
+  finishBtn.innerHTML = "⏪";
+  finishBtn.className = "toDo__finishBtn"
+  finishBtn.addEventListener("click", () => {
+    addPendingToDo(text);
+    });
+    finishBtn.addEventListener("click", handleDeleteFinished);
+
+  const label = document.createElement("label");
+  label.innerHTML = text;
+  toDo.appendChild(deleteBtn);
+  toDo.appendChild(finishBtn);
+  toDo.appendChild(label);
+  finishedList.appendChild(toDo);
+  saveFinishedToDo(text);
 }
 
 function onSubmit(event) {
   event.preventDefault();
   const value = input.value;
   input.value = "";
-  addToDo(value);
+  addPendingToDo(value);
 }
 
-function loadToDos() {
-  const loadedToDos = localStorage.getItem("toDos");
+function loadPendingToDos() {
+  const loadedToDos = localStorage.getItem("Pending");
   if (loadedToDos !== null) {
     const parsedToDos = JSON.parse(loadedToDos);
     parsedToDos.forEach(function(toDo) {
-      addToDo(toDo.value);
+      addPendingToDo(toDo.value);
+    });
+  }
+  return;
+}
+
+function loadFinishedToDos() {
+  const loadedToDos = localStorage.getItem("Finished");
+  if (loadedToDos !== null) {
+    const parsedToDos = JSON.parse(loadedToDos);
+    parsedToDos.forEach(function(toDo) {
+      addFinishedToDo(toDo.value);
     });
   }
   return;
 }
 
 function init() {
-  loadToDos();
+  loadPendingToDos();
+  loadFinishedToDos();
 }
 
 form.addEventListener("submit", onSubmit);
