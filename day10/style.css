@@ -1,0 +1,31 @@
+body {
+  font-family: sans-serif;
+}
+
+.game_range_info {
+  font-weight: 600;
+}
+
+.game_range_bar {
+  display: block;
+  width: 300px;
+  cursor: pointer;
+  margin: 15px 0px;
+}
+
+.game_my-number_input {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.game_process_info {
+  font-size: 20px;
+  display: block;
+  margin: 20px 0px 5px 0px;
+}
+
+.game_result {
+  font-size: 20px;
+  font-weight: 600;
+  color: tomato;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>number game</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1>Random Number Game</h1>
+    <span class="game_range_info">Generate a number between 0 and 0</span>
+    <input
+      class="game_range_bar"
+      type="range"
+      value="0"
+      min="0"
+      max="200"
+      list="tickmarks"
+      oninput="document.querySelector('.game_range_info').innerHTML=`Generate a number between 0 and ${this.value}`;"
+    />
+    <datalist id="tickmarks">
+      <option value="0" label="0%"></option>
+      <option value="50"></option>
+      <option value="100" label="50%"></option>
+      <option value="150"></option>
+      <option value="200" label="100%"></option>
+    </datalist>
+
+    <div class="game_my-number">
+      Guess the number:
+      <input type="number" class="game_my-number_input" />
+      <button class="game_play_btn">Play</button>
+
+      <div class="game_result_box">
+        <span class="game_process_info"></span>
+        <span class="game_result"></span>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
