@@ -25,9 +25,9 @@ function numberGame(){
             alert("범위를 확인해주세요");
         }else{
         if(myNum == randomNum){
-            document.querySelector(".game_result").innerHTML = "You won!"
+            document.querySelector(".game_result").innerHTML = "You won :)"
         }else{
-            document.querySelector(".game_result").innerHTML = "You lost!"
+            document.querySelector(".game_result").innerHTML = "You lost :("
         }
     }
     }
