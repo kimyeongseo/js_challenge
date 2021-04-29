@@ -31,9 +31,5 @@ function numberGame(){
         }
     }
     }
-
-
-
-
 }
 
