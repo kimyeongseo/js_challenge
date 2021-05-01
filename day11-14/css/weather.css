@@ -1,0 +1,23 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0%;
+    position: relative;
+    align-content: center;
+}
+
+.weather{
+    position: absolute;
+    color: white;
+    top: 20px;
+    right: 10px;
+    cursor: default;
+}
+
+
+.weather_temperature,
+.weather_main{
+    display: inline;
+    margin-right: 65px;
+}

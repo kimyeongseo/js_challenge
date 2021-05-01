@@ -1,0 +1,28 @@
+.user-name{
+    margin-top: 20px;
+    font-size: 2.3rem;
+    color: rgb(255, 255, 255);
+   text-align: center;
+   cursor: default;
+
+}
+
+.name__input {
+    margin-bottom: 20px;
+    list-style: none;
+    background:none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid #ffb6b9;
+    font-size: 26px;
+    text-align: center;
+    width: 250px;
+    color: #EEEEEE;
+  
+  }
+
+  .name__input:hover{
+      transform: scale(1.1);
+      transition: transform 0.3s ease-in-out;
+  }

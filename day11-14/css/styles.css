@@ -1,0 +1,10 @@
+@import "main.css";
+@import "bg.css";
+@import "clock.css";
+@import "weather.css";
+@import "center.css";
+@import "todo.css";
+
+body {
+  box-sizing: border-box;
+}

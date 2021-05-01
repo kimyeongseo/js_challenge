@@ -1,0 +1,46 @@
+.to-do__list {
+padding: 0%;
+margin-top: 10px;
+  list-style: none;
+}
+
+.toDo {
+  font-size: 25px;
+  color: white;
+}
+
+.toDo__button {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.add-to-do{
+  background:none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px solid #ffb6b9;
+  font-size: 26px;
+  text-align: center;
+  width: 250px;
+  color: white;
+  margin-bottom: 20px;
+
+}
+
+.to-do-form{
+  margin: auto;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.to-do{
+  height: 500px;
+  width: 350px;
+  margin: auto;
+}
+
+.add-to-do:hover{
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
