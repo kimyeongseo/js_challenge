@@ -3,7 +3,7 @@ const weatherTemperature = document.querySelector(".weather_temperature"),
     weatherTemps = document.querySelector(".weather_temps"),
     weatherOthers = document.querySelector(".weather_others");
 
-const key = "8f3cb3ceab4f153e9a4ceb8cea8e5225"; // API 발급받은 key값
+const key = "8f3cb3ceab4f153e9a4ceb8cea8e5225"; 
 
 const drawWeather = (weather) => {
     weatherTemperature.innerHTML = `${weather.temp} °C`;
@@ -27,7 +27,7 @@ const getWeatherData = async (lat, lon) => {
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`
     );
     const weatherData = await data.json();
-    const ABS_ZERO = 273.15; // 이 API에서는 온도에 절대영도를 사용함
+    const ABS_ZERO = 273.15; 
 
     const weather = {
         temp: (weatherData.main.temp - ABS_ZERO).toFixed(2),
@@ -37,8 +37,8 @@ const getWeatherData = async (lat, lon) => {
         hum: weatherData.main.humidity,
         main: weatherData.weather[0].main,
         wind: weatherData.wind.speed,
-        id: weatherData.weather[0].id, // 나중에 아이콘 사용하기 위한 용도
-        rain: weatherData.rain ? weatherData.rain["1h"] : null, // 비가 올 때만 데이터가 들어있음
+        id: weatherData.weather[0].id, 
+        rain: weatherData.rain ? weatherData.rain["1h"] : null,
         icon: weatherData.weather[0].icon,
     };
 

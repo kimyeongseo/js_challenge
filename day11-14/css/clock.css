@@ -1,8 +1,8 @@
 .header {
- margin-top: 150px;
+  margin-top: 100px;
   font-size: 4rem;
   font-weight: 600;
-  color: #EEEEEE;
+  color: #eeeeee;
   text-align: center;
 }
 
@@ -10,9 +10,9 @@
   color: rgb(31, 182, 228);
 }
 
-.analog{
-margin: auto;
-margin-top: 30px;
+.analog {
+  margin: auto;
+  margin-top: 30px;
 }
 
 .analog_clock {
@@ -21,9 +21,9 @@ margin-top: 30px;
   width: 13rem;
   height: 13rem;
   border-radius: 50%;
-  background-color: #EEEEEE;
-  -webkit-box-shadow: 2px 13px 28px -1px rgba(185, 185, 185, 0.1); 
-  box-shadow: 2px 13px 28px -1px rgba(97,97,97,0.44);
+  background-color: #eeeeee;
+  -webkit-box-shadow: 2px 13px 28px -1px rgba(185, 185, 185, 0.1);
+  box-shadow: 2px 13px 28px -1px rgba(97, 97, 97, 0.44);
 }
 
 .analog_clock > p {
@@ -68,9 +68,9 @@ margin-top: 30px;
   transform: rotate(90deg);
 }
 
-.clock{
+.clock {
   display: flex;
- flex-direction: column;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -78,9 +78,8 @@ margin-top: 30px;
   display: flex;
   font-size: 5rem;
   font-weight: 600;
-  color: #EEEEEE;
+  color: #eeeeee;
   margin: auto;
- 
 }
 
 .digital_clock_bnt {
@@ -90,7 +89,7 @@ margin-top: 30px;
   margin-top: 11px;
   width: 4.8rem;
   height: 3.3rem;
-  border: 0.1rem solid #EEEEEE;
+  border: 0.1rem solid #eeeeee;
   border-radius: 10px;
   font-size: 2.3rem;
   text-align: center;
@@ -98,14 +97,14 @@ margin-top: 30px;
 }
 
 .digital_clock_bnt:hover {
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   color: rgb(31, 182, 228);
 }
 
-.digital_clock:hover{
+.digital_clock:hover {
   cursor: default;
 }
 
-.header:hover{
+.header:hover {
   cursor: default;
 }

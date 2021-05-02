@@ -1,4 +1,3 @@
-
 const nameContainer = document.querySelector(".user-name");
 
 function paintName(name) {

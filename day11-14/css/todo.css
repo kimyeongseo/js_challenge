@@ -1,11 +1,12 @@
 .to-do__list {
-padding: 0%;
-margin-top: 10px;
+  padding: 0%;
+  margin-top: 10px;
   list-style: none;
 }
 
 .toDo {
   font-size: 25px;
+  margin-bottom: 10px;
   color: white;
 }
 
@@ -14,8 +15,8 @@ margin-top: 10px;
   cursor: pointer;
 }
 
-.add-to-do{
-  background:none;
+.add-to-do {
+  background: none;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -25,22 +26,21 @@ margin-top: 10px;
   width: 250px;
   color: white;
   margin-bottom: 20px;
-
 }
 
-.to-do-form{
+.to-do-form {
   margin: auto;
   text-align: center;
   margin-top: 20px;
 }
 
-.to-do{
-  height: 500px;
+.to-do {
+  height: 100px;
   width: 350px;
   margin: auto;
 }
 
-.add-to-do:hover{
+.add-to-do:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease-in-out;
 }

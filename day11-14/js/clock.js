@@ -24,7 +24,7 @@ function getTime(){
                 changeClockModeBnt.innerHTML = "PM";
         }else if(hours >= 0 && hours < 12){
             if(hours === 0) hours = 12;
-            digitalClock.innerText = `0${hours} : ${
+            digitalClock.innerText = `${hours} : ${
                 minutes  < 10 ? `0${minutes}` : minutes} : ${
                 seconds < 10 ? `0${seconds}` : seconds}`;
             changeClockModeBnt.innerHTML = "AM";
