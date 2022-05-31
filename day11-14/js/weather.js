@@ -3,8 +3,6 @@ const weatherTemperature = document.querySelector(".weather_temperature"),
     weatherTemps = document.querySelector(".weather_temps"),
     weatherOthers = document.querySelector(".weather_others");
 
-const key = "8f3cb3ceab4f153e9a4ceb8cea8e5225"; 
-
 const drawWeather = (weather) => {
     weatherTemperature.innerHTML = `${weather.temp} °C`;
     weatherMain.innerHTML = `${weather.main}`;
